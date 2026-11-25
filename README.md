@@ -1,4 +1,6 @@
-# Gürmak Makina 3 Eksenli CNC Dik İşleme Merkezi — SWOT ve RAMS Analizi
+# Özkan Kardeşler CNC Merkezi — CNC İşleme Merkezi: SWOT ve RAMS Analizi
+
+> Safety 4.0 Bootcamp kapsamında hazırlanmış eğitim çalışmasıdır. Resmî denetim, uygunluk değerlendirmesi veya belgelendirme değildir; CE/mevzuat uygunluğu garantisi vermez.
 
 ## İçindekiler
 
@@ -15,7 +17,7 @@
 
 ## 1. Proje Hakkında
 
-Bu depo, **Gürmak Makina (SAMİB Üyesi) 3 Eksenli CNC Dik İşleme Merkezi** için iki yöntemle yapılmış değerlendirmeyi içerir:
+Bu depo, **Özkan Kardeşler CNC Merkezi'nin (SAMİB üyesi) kullandığı CNC işleme merkezi** için iki yöntemle yapılmış değerlendirmeyi içerir:
 
 - **SWOT analizi:** Makinenin güçlü/zayıf yönleri ile fırsat ve tehditlerinin, özellikle fonksiyonel emniyet ve siber güvenlik açısından ortaya konması.
 - **RAMS ilkeleri:** Makinenin **Güvenilirlik (Reliability)**, **Kullanılabilirlik (Availability)**, **Bakım Yapılabilirlik (Maintainability)** ve **Emniyet (Safety)** boyutlarında değerlendirilmesi.
@@ -24,10 +26,20 @@ Amaç, makinenin hem üretim sürekliliğini hem de insan emniyetini aynı çer�
 
 ## 2. Makine Tanıtımı
 
+**Kamuya açık bilgiler** (SAMİB üye profili):
+
 | Özellik | Açıklama |
 |---|---|
-| Üretici | Gürmak Makina (SAMİB üyesi) |
-| Makine tipi | 3 eksenli CNC dik işleme merkezi (X-Y-Z) |
+| Firma | Özkan Kardeşler CNC Merkezi |
+| Konum | Dörtyol Sanayi Sitesi, Arifiye / Sakarya |
+| Birlik | Sakarya Makine İmalatçıları Birliği (SAMİB) üye profili mevcut |
+| Faaliyet | Talaşlı imalat; üniversal tezgâhlarla başlayıp CNC işleme merkezlerine geçilmiş |
+| Makine | CNC işleme merkezi (marka, model, eksen sayısı ve kontrol ünitesi kamuya açık kaynaklarda bulunamadı) |
+
+**Analizde varsayılan makine yapısı** (kamuya açık değil, tipik bir CNC işleme merkezine göre varsayım):
+
+| Özellik | Varsayım |
+|---|---|
 | Ana hareketli parçalar | İş mili, X-Y-Z eksen sürücüleri, otomatik takım değiştirici (ATC) |
 | Emniyet zinciri | Acil stop / kilitli kapı → Safety PLC → STO / kontaktör → Safe State |
 | Normal kontrol zinciri | Sensör → PLC (CNC kontrolcü) → Aktüatör |
@@ -46,8 +58,8 @@ Başlıca tehlikeler: dönen iş mili ve takım (sarılma, kesilme), eksen ve AT
 
 - Emniyet fonksiyonları tanımlı ve ayrı bir safety yolunda yaşar: kilitli kapı, acil stop → STO, ayar modunda onay şalteri.
 - Safety PLC çift kanallı çalışır, arızada güvenli duruma (STO) geçer.
-- 3 eksenli yapı mekanik olarak sade olduğundan arıza noktası sayısı 5 eksenli makinelere göre azdır.
-- Yerli üretici ve SAMİB üyeliği: yedek parça, servis ve eğitime erişim kolaylığı.
+- Talaşlı imalatta yaygın, olgun bir makine tipi: bakım personelinin ve servisin tanıdığı yapı.
+- SAMİB üyeliği ve Sakarya sanayi ekosistemi içinde olmak: yedek parça, servis ve eğitime erişim kolaylığı.
 - Standart bir kontrol mimarisi (PLC + sürücüler) sayesinde bakım personelinin tanıdığı bir yapı.
 
 ### W — Zayıf Yönler (Weaknesses)
@@ -143,7 +155,7 @@ Makinenin insana zarar vermemesi; arızada güvenli duruma (safe state) geçmesi
 
 ## 6. Laboratuvar Çıktıları
 
-Bu analizlerin dayanağı olan laboratuvar föyleri (Gürmak CNC için doldurulmuş) şunlardır:
+Bu analizlerin dayanağı olan laboratuvar föyleri (Özkan Kardeşler CNC Merkezi'nin CNC işleme merkezi için doldurulmuş) şunlardır:
 
 | Lab | Konu | Çıktı |
 |---|---|---|
@@ -163,6 +175,7 @@ Risk Register özeti (skor = L × S × E):
 
 ## 7. Varsayımlar ve Sınırlar
 
+- Bu çalışma yalnızca herkese açık bilgilere dayanır; firma veya birlikle irtibata geçilmemiştir. Makinenin marka/modeli kamuya açık olmadığı için emniyet ve ağ yapısı tipik bir CNC işleme merkezine göre varsayılmıştır.
 - Makinenin gerçek ağ yapısı, uzak erişim yapılandırması ve PLr/SIL değerleri üreticiden doğrulanmamıştır; ilgili ifadeler **varsayımdır**.
 - L, S, E puanları eğitim amaçlı, öğrenci değerlendirmesidir.
 - Bu çalışma bir eğitim çıktısıdır; resmî risk değerlendirmesi veya uygunluk belgesi yerine geçmez.
@@ -170,13 +183,14 @@ Risk Register özeti (skor = L × S × E):
 
 ## 8. Kaynaklar
 
+- SAMİB üye profili: Özkan Kardeşler CNC — https://samib.org.tr/uye/ozkan-kardesler-cnc/
 - IEC 62443 serisi: Endüstriyel otomasyon ve kontrol sistemlerinde siber güvenlik
 - ISO 13849-1 / IEC 62061: Makinelerde emniyetle ilgili kontrol sistemleri (PL / SIL)
 - EN 50126: RAMS yaşam döngüsü yaklaşımı
 - AB Makine Yönetmeliği (EU) 2023/1230
 - AB Siber Dayanıklılık Yasası (Cyber Resilience Act, CRA)
-- Safety 4.0 Bootcamp laboratuvar föyleri (Lab 1–5)
+- Safety 4.0 Bootcamp laboratuvar föyleri (Lab 1–7)
 
 ---
 
-**Hazırlayan:** Osman Kerim Ögütçü · **Ders / Hoca:** Yazılım Mühendisliği ve Güncek Konular/Prof. Dr.FATİH ÖZKAYNAK  
+**Hazırlayan:** Osman Kerim Ögütçü  **Ders / Hoca:** Yazılım Mühendisliğinde Güncel Konular / Prof. Dr.FATİH ÖZKAYNAK 
