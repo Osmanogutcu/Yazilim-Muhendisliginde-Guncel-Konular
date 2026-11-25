@@ -193,4 +193,4 @@ Risk Register özeti (skor = L × S × E):
 
 ---
 
-**Hazırlayan:** Osman Kerim Ögütçü  **Ders / Hoca:** Yazılım Mühendisliğinde Güncel Konular / Prof. Dr.FATİH ÖZKAYNAK 
+**Hazırlayan:** Osman Kerim Ögütçü  **Ders / Hoca:** Yazılım Mühendisliğinde Güncel Konular / Prof. Dr. Fatih Özkaynak 
